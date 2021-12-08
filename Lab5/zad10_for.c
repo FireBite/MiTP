@@ -1,13 +1,13 @@
 #include <stdio.h>
 
 long long fib(int n) {
-    long long p = 1, pp = 1;
-    
+    long long p = 1, pp = 1, temp;
+
     if (n <= 2)
         return 1;
     
     while (n-2) {
-        long long temp = p;
+        temp = p;
         p = p+pp;
         pp = temp;
         n--;
@@ -21,7 +21,8 @@ int main() {
     printf("Element: ");
     scanf("%d", &n);
 
-    printf("%lld\n", fib(n));
+    for(int i = 0; i < 100000; i++)
+        printf("%lld\n", fib(n));
 
     return 0;
 }

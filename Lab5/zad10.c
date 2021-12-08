@@ -9,7 +9,8 @@ int main() {
     printf("Element: ");
     scanf("%d", &n);
 
-    printf("%lld\n", fib(1, 1, n));
+    for(int i = 0; i < 100000; i++)
+        printf("%lld\n", fib(1, 1, n));
 
     return 0;
 }
