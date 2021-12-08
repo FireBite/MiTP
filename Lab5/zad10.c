@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-long long fib(int a, int b, int n) {
+long long fib(long long a, long long b, int n) {
     return (--n > 0) ? fib(b, a+b, n) : a;
 }
 
