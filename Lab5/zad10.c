@@ -1,19 +1,7 @@
 #include <stdio.h>
 
-int fib(int n) {
-    int p = 1, pp = 1;
-    
-    if (n <= 2)
-        return 1;
-    
-    while (n-2) {
-        int temp = p;
-        p = p+pp;
-        pp = temp;
-        n--;
-    }
-    
-    return p;
+long long fib(int a, int b, int n) {
+    return (--n > 0) ? fib(b, a+b, n) : a;
 }
 
 int main() {
@@ -21,7 +9,7 @@ int main() {
     printf("Element: ");
     scanf("%d", &n);
 
-    printf("%d\n", fib(n));
+    printf("%lld\n", fib(1, 1, n));
 
     return 0;
 }
