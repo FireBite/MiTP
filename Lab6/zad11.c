@@ -1,8 +1,7 @@
 #include <stdio.h>
 
-int calls = 0;
-
 void funkcja() {
+    static int calls = 0;
     calls++;
     printf("%d\n", calls);
 }
@@ -15,4 +14,5 @@ int main() {
     for(int i = 1; i < 100; i++)
         funkcja();
     
+    return 0;
 }
