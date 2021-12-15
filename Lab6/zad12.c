@@ -20,7 +20,7 @@ int main() {
 
     if(sum < 0) {
         printf("Invalid input, negative money\n");
-        return -1;
+        return 22;
     }
 
     int temp_sum = sum;
@@ -33,7 +33,7 @@ int main() {
 
     if(temp_sum) {
         printf("Cannot divide %dPLN into notes (%dPLN left)\n", sum, temp_sum);
-        return -1;
+        return 22;
     }
 
     PRINT_INITIAL();
@@ -41,9 +41,8 @@ int main() {
     for(int i = 1; i <= b100; i++) {
         PRINT_MONEY(b100 - i, b50 + 2*i, b20);
 
-        for(int n = 0; n <= b50; n += 2) {
+        for(int n = 0; n <= b50; n += 2)
             PRINT_MONEY(b100 - i, b50 - n, b20 + 5*i);
-        }
     }
 
     return 0;
