@@ -2,6 +2,9 @@
 #include "matrix.h"
 
 int m_printf(MATRIX *m) {
+    if (!m || !m->ptr)
+        return 0;
+
     printf("====\n");
 
     for (int x = 0; x < m->x; x++) {
@@ -12,4 +15,5 @@ int m_printf(MATRIX *m) {
     }
 
     printf("====\n");
+    return 1;
 }
