@@ -10,3 +10,13 @@ MATRIX m_create(int x, int y) {
 
     return m;
 }
+
+MATRIX m_create_empty() {
+    MATRIX m;
+    
+    m.x = 0;
+    m.y = 0;
+    m.ptr = NULL;
+
+    return m;
+}
