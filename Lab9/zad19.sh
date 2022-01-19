@@ -4,7 +4,7 @@ set -e
 
 echo "Compiling program"
 
-./mk_int_lib.sh
-gcc zad18.c -L. -lsortint -o zad18
+./mk_char_lib.sh
+gcc zad19.c -L. -lsortchar -o zad19
 
 echo "Program compilled"

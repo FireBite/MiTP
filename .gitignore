@@ -4,6 +4,9 @@
 # Unignore all with extensions
 !*.*
 
+# Ignore library files
+*.a
+
 # Unignore all dirs
 !*/
 

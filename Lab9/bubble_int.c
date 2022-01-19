@@ -10,11 +10,11 @@ void bubble_int(int data[], int len) {
             if (data[i] > data[i+1]) {
                 int temp = data[i];
                 data[i] = data[i+1];
-                data[i+1] = data[i];
+                data[i+1] = temp;
                 hasChanged = 1;               
             }
         }
         iteration++;
     }
-    while (!hasChanged);
+    while (hasChanged);
 }

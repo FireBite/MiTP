@@ -1,11 +1,14 @@
-#include "sortint.h"
+#include "sortchar.h"
+#include "stdlib.h"
+#include "string.h"
 
-void merge(int arr[], int l, int m, int r)
+void merge(char *arr[], int l, int m, int r)
 {
     int lenL = m - l + 1;
     int lenR = r - m;
   
-    int L[lenL], R[lenR];
+    char **L = (char**)malloc(sizeof(char**) * lenL);
+    char **R = (char**)malloc(sizeof(char**) * lenR);
   
     for (int i = 0; i < lenL; i++)
         L[i] = arr[l + i];
@@ -14,7 +17,7 @@ void merge(int arr[], int l, int m, int r)
   
     int i = 0, j = 0, k = l;
     while (i < lenL && j < lenR) {
-        if (L[i] <= R[j]) {
+        if (strcmp(L[i], R[j]) <= 0) {
             arr[k] = L[i];
             i++;
         }
@@ -38,7 +41,7 @@ void merge(int arr[], int l, int m, int r)
     }
 }
 
-void sort(int arr[], int l, int r)
+void sort(char *arr[], int l, int r)
 {
     if (l < r) {
         int mid = (l+r) / 2;
@@ -50,6 +53,6 @@ void sort(int arr[], int l, int r)
     }
 }
 
-void merge_int(int data[], int len) {
-    sort(data, 0, len - 1);
+void merge_char(char *data[], int len, int start) {
+    sort(data, start, len - 1);
 }
